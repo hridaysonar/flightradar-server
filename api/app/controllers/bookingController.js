@@ -35,19 +35,7 @@ const getMyBooking = async (req, res, _next) => {
 };
 
 
-const deleteBooking = async (req, res) => {
-  try {
-   
-   const result= await Booking.findByIdAndDelete(req.params.id);
-   console.log(result);
-    res.status(200).json({
-      message: "Deleted Success"
-    });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: "Server error" });
-  }
-};
+
 
 
 
