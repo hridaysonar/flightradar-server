@@ -101,34 +101,6 @@ const deleteTourPackage = async (req, res) => {
 // update 
 
 // Your backend UpdateTourPackage function (from your prompt)
-const UpdateTourPackage = async (req, res) => {
-    try {
-        // Log the ID and body received
-        console.log("Update request received for ID:", req.params.id);
-        console.log("Request body:", req.body);
-
-        const updatedTour = await TourPackage.findByIdAndUpdate(
-            req.params.id,
-            req.body,
-            { new: true, runValidators: true }
-        );
-
-        if (!updatedTour) {
-            console.log("Tour package not found for ID:", req.params.id);
-            return res.status(404).json({ message: "Tour package not found" });
-        }
-
-        console.log("Tour package updated successfully:", updatedTour);
-        res.status(200).json({
-            message: "Update success",
-            data: updatedTour
-        });
-    } catch (error) {
-        // Log the actual error
-        console.error("Error in UpdateTourPackage:", error);
-        res.status(500).json({ message: "Update failed", error: error.message }); // Send error.message for better client side parsing
-    }
-};
 
 
 
