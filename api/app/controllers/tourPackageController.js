@@ -87,16 +87,6 @@ const getMyTourPackage = async (req, res) => {
 
 
 //  delete
-const deleteTourPackage = async (req, res) => {
-  try {
-    await TourPackage.findByIdAndDelete(req.params.id);
-    res.status(200).json({
-      message:"Deleted Sussess"
-    })
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 // update 
 const UpdateTourPackage = async (req, res) => {
